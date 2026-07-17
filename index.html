@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signa — Consultant Briefing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* To use the licensed Canva font "The Seasons" instead of Bodoni Moda:
+   1) license + download the font files, host them next to this page
+   2) uncomment and point at the files:
+   @font-face{font-family:'The Seasons';src:url('TheSeasons-Regular.woff2') format('woff2');font-weight:400}
+   3) change --didone below to: 'The Seasons',serif                       */
+:root{
+  --paper:#faf8f4;--ink:#1c1b19;--ink-2:#54514c;--ink-3:#8b8681;
+  --rule:#e6e1da;--rule-2:#efeae3;
+  --gold:#a8834f;--gold-soft:#f3ece1;
+  --band-brief:#fbf7f0;--band-evid:#edf0e9;--band-bespoke:#f7f0e2;--band-ledger:#ffffff;--band-answer:#f2eee6;--band-engine:#1c1b19;
+  --up:#3f6b4f;--down:#9b4a3c;
+  --didone:'Bodoni Moda',serif;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.inner{max-width:1180px;margin:0 auto;padding:0 40px}
+.splash{position:fixed;inset:0;background:var(--paper);z-index:100;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:26px;transition:opacity .8s ease,visibility .8s;cursor:pointer}
+.splash.done{opacity:0;visibility:hidden}
+.splash-swan{width:150px;height:184px}
+.splash-swan path{fill:none;stroke:var(--ink);stroke-width:13;stroke-linecap:round;
+  stroke-dasharray:1500;stroke-dashoffset:1500;animation:draw 2s cubic-bezier(.55,0,.25,1) .3s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.splash-word{font-family:var(--didone);font-size:58px;font-weight:400;letter-spacing:0.26em;text-transform:uppercase;display:flex;overflow:hidden}
+.splash-word span{opacity:0;transform:translateY(28px);animation:riseup .7s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes riseup{to{opacity:1;transform:none}}
+.splash-sub{font-size:10px;letter-spacing:0.34em;text-transform:uppercase;color:var(--ink-3);opacity:0;animation:fadein .8s ease 2.5s forwards}
+@keyframes fadein{to{opacity:1}}
+.masthead{padding:46px 0 0;text-align:center}
+.mast-swan{width:66px;height:80px;margin:0 auto 10px;display:block}
+.mast-swan path{fill:none;stroke:var(--ink);stroke-width:13;stroke-linecap:round}
+.wordmark{font-family:var(--didone);font-size:46px;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;line-height:1}
+.quote{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--ink-2);margin:16px auto 6px;max-width:520px}
+.quote-attr{font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-3);margin-bottom:26px}
+.mast-bar{border-top:1.5px solid var(--ink);border-bottom:1px solid var(--rule);
+  display:flex;align-items:center;justify-content:space-between;padding:14px 0;margin-top:8px}
+.mast-bar .lbl{font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-3)}
+.tenant-sel{font-family:var(--serif);font-size:21px;border:none;background:none;color:var(--ink);cursor:pointer;outline:none}
+.mode{display:inline-block;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;padding:3px 10px;
+  border:1px solid rgba(168,131,79,.35);background:var(--gold-soft);color:var(--gold);border-radius:2px}
+.dossier{display:grid;grid-template-columns:repeat(4,1fr);padding:6px 0 0;text-align:left}
+.dos{padding:20px 26px 24px 0;border-right:1px solid var(--rule-2)}
+.dos:last-child{border-right:none}
+.dos-l{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+.dos-v{font-family:var(--serif);font-size:20px;font-weight:500;line-height:1.25}
+.dos-v small{font-family:var(--sans);font-size:11px;color:var(--ink-2);display:block;margin-top:3px;font-weight:400}
+.pill{display:inline-block;font-size:10px;letter-spacing:0.08em;padding:3px 10px;border-radius:2px;
+  background:var(--gold-soft);color:var(--gold);border:1px solid rgba(168,131,79,.28);font-weight:500}
+.band{padding:56px 0 60px}
+.band-brief{background:var(--band-brief);border-top:1px solid var(--rule-2)}
+.band-evid{background:var(--band-evid)}
+.band-bespoke{background:var(--band-bespoke)}
+.band-ledger{background:var(--band-ledger);border-top:1px solid var(--rule-2)}
+.band-engine{background:var(--band-engine);color:#efece7;padding:44px 0 48px}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:32px}
+.sec-num{font-family:var(--didone);font-size:15px;color:var(--gold);letter-spacing:0.1em}
+.sec-head h2{font-family:var(--didone);font-size:27px;font-weight:400;letter-spacing:0.06em;white-space:nowrap}
+.sec-head .ln{flex:1;height:1px;background:var(--rule)}
+.band-engine .sec-head .ln{background:rgba(255,255,255,0.14)}
+.sec-head .note{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-3)}
+.band-engine .sec-head h2{color:#efece7}
+.band-engine .sec-head .note{color:rgba(239,236,231,0.45)}
+.briefing{display:grid;grid-template-columns:1fr 300px;gap:70px}
+.brief-body{font-family:var(--serif);font-size:25px;line-height:1.52;font-weight:300}
+.brief-body em{font-style:italic}
+.brief-body b{font-weight:600}
+.brief-body p{margin-bottom:20px}
+.brief-body p:last-child{margin-bottom:0}
+.sig{margin-top:30px;padding-top:18px;border-top:1px solid var(--rule);display:flex;align-items:center;gap:12px}
+.sig-swan{width:22px;height:27px}
+.sig-swan path{fill:none;stroke:var(--ink-3);stroke-width:14;stroke-linecap:round}
+.sig-t{font-family:var(--serif);font-size:15px;font-style:italic;color:var(--ink-2)}
+.sig-t span{font-style:normal;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-3);display:block;margin-top:2px}
+.actions-h{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:18px}
+.act{padding:14px 0;border-bottom:1px solid var(--rule-2);display:flex;gap:13px}
+.act:last-child{border-bottom:none}
+.act-n{font-family:var(--didone);font-size:14px;color:var(--gold);line-height:1.5;width:26px;flex-shrink:0}
+.act-t{font-size:13px;font-weight:500;line-height:1.45;margin-bottom:2px}
+.act-s{font-size:11.5px;color:var(--ink-3);line-height:1.5}
+.evidence{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.ev{background:rgba(255,255,255,0.72);padding:26px 24px}
+.ev-l{font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px}
+.ev-v{font-family:var(--didone);font-size:40px;font-weight:400;line-height:1.05}
+.ev-v .u{font-size:19px;color:var(--ink-3)}
+.ev-s{font-size:11.5px;color:var(--ink-2);margin-top:9px;line-height:1.5}
+.ev-s .up{color:var(--up);font-weight:500}
+.ev-s .down{color:var(--down);font-weight:500}
+.bespoke{display:grid;grid-template-columns:1.15fr 1fr;gap:44px;align-items:start}
+.card{background:#fffdf9;border:1px solid var(--rule)}
+.card-h{padding:16px 22px;border-bottom:1px solid var(--rule-2);display:flex;align-items:center;gap:12px}
+.card-h .t{font-family:var(--serif);font-size:19px;font-weight:500}
+.card-h .tag{margin-left:auto;font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3)}
+.code{padding:20px 22px;font-family:ui-monospace,'JetBrains Mono',monospace;font-size:11px;line-height:1.75;
+  color:var(--ink-2);white-space:pre;overflow:auto;max-height:330px}
+.code .k{color:var(--gold)}.code .s{color:var(--ink)}.code .c{color:var(--ink-3);font-style:italic}
+.style-row{display:flex;gap:14px;padding:13px 22px;border-bottom:1px solid var(--rule-2);font-size:12.5px}
+.style-row:last-child{border-bottom:none}
+.style-k{width:118px;flex-shrink:0;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-3);padding-top:2px}
+.style-v{color:var(--ink);line-height:1.5}
+.swatch{width:13px;height:13px;border-radius:2px;border:1px solid var(--rule);display:inline-block;vertical-align:-2px;margin-right:7px}
+.rails{display:flex;flex-wrap:wrap;gap:8px;padding:18px 22px}
+.rail{font-size:11px;padding:5px 11px;border:1px solid var(--rule);border-radius:2px;color:var(--ink-2);background:#fff}
+.rail.hit{border-color:rgba(168,131,79,.45);background:var(--gold-soft);color:var(--gold);font-weight:500}
+.rail-note{padding:0 22px 18px;font-size:11.5px;color:var(--ink-3);line-height:1.6}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:9.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-3);
+  font-weight:500;padding:13px 22px;border-bottom:1px solid var(--rule)}
+td{padding:16px 22px;border-bottom:1px solid var(--rule-2);font-size:13px;color:var(--ink-2)}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fbf9f5}
+.kw{color:var(--ink);font-family:var(--serif);font-size:17px}
+.posn{font-family:var(--didone);font-size:17px;color:var(--ink)}
+.d-up{color:var(--up);font-size:11px;margin-left:7px;font-weight:500}
+.d-dn{color:var(--down);font-size:11px;margin-left:7px;font-weight:500}
+.verdict{color:var(--ink-3);font-style:italic;line-height:1.5;font-family:var(--serif);font-size:14px}
+.st{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3)}
+.st.review{color:var(--gold);font-weight:500}
+.st.live{color:var(--up);font-weight:500}
+.band-answer{background:var(--band-answer)}
+.prompt-btn{font-family:var(--sans);font-size:8.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;
+  padding:4px 10px;border-radius:2px;border:1px solid rgba(168,131,79,.4);background:transparent;color:var(--gold);
+  cursor:pointer;white-space:nowrap;transition:background .15s}
+.prompt-btn:hover{background:var(--gold-soft)}
+.pmodal{position:fixed;inset:0;background:rgba(28,27,25,.55);display:none;align-items:center;justify-content:center;z-index:50;padding:30px}
+.pmodal.open{display:flex}
+.pmodal-card{background:var(--paper);max-width:860px;width:100%;max-height:86vh;display:flex;flex-direction:column;
+  border:1px solid var(--rule);box-shadow:0 24px 60px rgba(28,27,25,.35)}
+.pmodal-h{padding:18px 24px;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:14px}
+.pmodal-h .t{font-family:var(--serif);font-size:19px;font-weight:500;flex:1}
+.pmodal-h .lbl{font-size:8.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-3)}
+.pmodal-copy{font-family:var(--sans);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;
+  padding:7px 16px;border-radius:2px;border:1px solid var(--gold);background:var(--gold);color:#fff;cursor:pointer}
+.pmodal-close{font-family:var(--sans);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;
+  padding:7px 12px;border-radius:2px;border:1px solid var(--rule);background:transparent;color:var(--ink-3);cursor:pointer}
+.pmodal-body{overflow:auto;padding:0}
+.pmodal-body pre{font-family:'SF Mono',Consolas,monospace;font-size:11px;line-height:1.7;color:var(--ink-2);
+  padding:22px 24px;white-space:pre-wrap;word-break:break-word;margin:0}
+.pmodal-note{padding:10px 24px 14px;border-top:1px solid var(--rule-2);font-family:var(--serif);font-style:italic;
+  font-size:12.5px;color:var(--ink-3)}
+.geo-chip{display:inline-block;font-family:var(--sans);font-size:8px;letter-spacing:0.14em;text-transform:uppercase;
+  padding:2px 7px;margin-left:8px;border-radius:2px;background:var(--gold-soft);color:var(--gold);
+  border:1px solid rgba(168,131,79,.3);vertical-align:middle;font-weight:600}
+.answer-wrap{display:grid;grid-template-columns:1fr 340px;gap:60px;align-items:start}
+.answer-prose{font-family:var(--serif);font-size:19px;line-height:1.55;font-weight:300}
+.answer-prose p{margin-bottom:14px}.answer-prose p:last-child{margin-bottom:0}
+.answer-prose em{font-style:italic}.answer-prose b{font-weight:600}
+.geo-cards{display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.gc{background:rgba(255,255,255,0.75);padding:14px 18px;display:flex;align-items:baseline;justify-content:space-between;gap:14px}
+.gc-l{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-3)}
+.gc-v{font-family:var(--didone);font-size:22px}
+.gc-v .u{font-size:12px;color:var(--ink-3)}
+.gc-bar{flex:1;height:3px;background:var(--rule);border-radius:2px;overflow:hidden;align-self:center}
+.gc-bar i{display:block;height:100%;background:var(--gold)}
+.engine-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.08)}
+.es{background:rgba(255,255,255,0.03);padding:20px 22px;display:flex;align-items:center;gap:12px}
+.es-dot{width:6px;height:6px;border-radius:50%;background:#7fb08f;flex-shrink:0;
+  box-shadow:0 0 0 3px rgba(127,176,143,.15);animation:pulse 3s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.es-t{font-size:12px;font-weight:500;color:#efece7}
+.es-s{font-size:10.5px;color:rgba(239,236,231,0.45)}
+.engine-quote{margin-top:28px;text-align:center;font-family:var(--serif);font-style:italic;
+  font-size:15px;color:rgba(239,236,231,0.55)}
+@media(max-width:1000px){
+  .inner{padding:0 22px}
+  .briefing,.bespoke,.answer-wrap{grid-template-columns:1fr;gap:40px}
+  .dossier,.evidence,.engine-strip{grid-template-columns:1fr 1fr}
+  .brief-body{font-size:21px}
+  .wordmark{font-size:34px}
+  .splash-word{font-size:38px}
+}
+</style>
+</head>
+<body>
+
+<div class="splash" id="splash">
+  <svg class="splash-swan" viewBox="0 0 640 780">
+    <path d="M95 105 C130 40 215 25 245 85 C275 148 175 200 160 300 C142 420 210 530 340 530 C470 530 545 420 550 260 C480 350 300 300 245 380 C205 438 240 480 275 478"/>
+  </svg>
+  <div class="splash-word" id="splashWord"></div>
+  <div class="splash-sub">Autonomous SEO &amp; GEO Consultancy</div>
+</div>
+
+<div class="inner masthead">
+  <svg class="mast-swan" viewBox="0 0 640 780">
+    <path d="M95 105 C130 40 215 25 245 85 C275 148 175 200 160 300 C142 420 210 530 340 530 C470 530 545 420 550 260 C480 350 300 300 245 380 C205 438 240 480 275 478"/>
+  </svg>
+  <div class="wordmark">Signa</div>
+  <div class="quote">&ldquo;Calm on the surface, but always paddling beneath it.&rdquo;</div>
+  <div class="quote-attr">The Signa Principle</div>
+  <div class="mast-bar">
+    <span class="lbl">Consultant Briefing &middot; <span id="briefDate"></span></span>
+    <select class="tenant-sel" id="tenantSel"></select>
+    <span class="mode">Demo Data</span>
+  </div>
+  <div class="dossier" id="dossier"></div>
+</div>
+
+<div class="band band-brief"><div class="inner">
+  <div class="sec-head"><span class="sec-num">I.</span><h2>The Briefing</h2><div class="ln"></div>
+    <span class="note">What Signa thinks this week</span></div>
+  <div class="briefing">
+    <div>
+      <div class="brief-body" id="brief"></div>
+      <div class="sig">
+        <svg class="sig-swan" viewBox="0 0 640 780"><path d="M95 105 C130 40 215 25 245 85 C275 148 175 200 160 300 C142 420 210 530 340 530 C470 530 545 420 550 260 C480 350 300 300 245 380 C205 438 240 480 275 478"/></svg>
+        <div class="sig-t">Signa<span>Engine &middot; Search &amp; Answer-Engine Advisory</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="actions-h">What I Recommend Next</div>
+      <div id="actions"></div>
+    </div>
+  </div>
+</div></div>
+
+<div class="band band-evid"><div class="inner">
+  <div class="sec-head"><span class="sec-num">II.</span><h2>The Evidence</h2><div class="ln"></div>
+    <span class="note">Supporting the briefing</span></div>
+  <div class="evidence" id="evidence"></div>
+</div></div>
+
+<div class="band band-bespoke"><div class="inner">
+  <div class="sec-head"><span class="sec-num">III.</span><h2>Built For This Client</h2><div class="ln"></div>
+    <span class="note">Nothing here is generic</span></div>
+  <div class="bespoke">
+    <div class="card">
+      <div class="card-h"><div class="t">Structured Data &mdash; Generated</div><div class="tag" id="schemaTag"></div></div>
+      <div class="code" id="schemaCode"></div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:26px">
+        <div class="card-h"><div class="t">House Style</div><div class="tag">Applied to every draft</div></div>
+        <div id="styleBody"></div>
+      </div>
+      <div class="card">
+        <div class="card-h"><div class="t">Compliance Guardrails</div><div class="tag" id="railTag"></div></div>
+        <div class="rails" id="rails"></div>
+        <div class="rail-note" id="railNote"></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<div class="band band-ledger"><div class="inner">
+  <div class="sec-head"><span class="sec-num">IV.</span><h2>The Ledger</h2><div class="ln"></div>
+    <span class="note">Every term, and my verdict on it</span></div>
+  <div class="card"><table>
+    <thead><tr><th>Term</th><th>Position</th><th>Signa&rsquo;s Verdict</th><th>Stage</th><th></th></tr></thead>
+    <tbody id="ledger"></tbody>
+  </table></div>
+</div></div>
+
+<div class="pmodal" id="pmodal">
+  <div class="pmodal-card">
+    <div class="pmodal-h">
+      <div><div class="lbl">Fix Prompt &mdash; Developer / AI-Ready</div><div class="t" id="pmTitle"></div></div>
+      <button class="pmodal-copy" id="pmCopy">Copy Prompt</button>
+      <button class="pmodal-close" id="pmClose">Close</button>
+    </div>
+    <div class="pmodal-body"><pre id="pmBody"></pre></div>
+    <div class="pmodal-note">Hand this to a developer, or paste it straight into an AI coding tool opened on the site&rsquo;s repository. The code is included &mdash; a consultant tells you what to fix; Signa hands you the fix.</div>
+  </div>
+</div>
+
+<div class="band band-answer"><div class="inner">
+  <div class="sec-head"><span class="sec-num">V.</span><h2>The Answer Layer</h2><div class="ln"></div>
+    <span class="note">GEO &mdash; how quotable you are to the machines</span></div>
+  <div class="answer-wrap">
+    <div class="answer-prose" id="answerProse"></div>
+    <div class="geo-cards" id="geoCards"></div>
+  </div>
+</div></div>
+
+<div class="band band-engine"><div class="inner">
+  <div class="sec-head"><span class="sec-num" style="color:#c9a86f">VI.</span><h2>Beneath the Surface</h2><div class="ln"></div>
+    <span class="note">Five systems, running unattended</span></div>
+  <div class="engine-strip">
+    <div class="es"><div class="es-dot"></div><div><div class="es-t">Content Engine</div><div class="es-s">Daily &middot; 06:00</div></div></div>
+    <div class="es"><div class="es-dot"></div><div><div class="es-t">Crawler &amp; Audit</div><div class="es-s">Weekly &middot; Mon 05:00</div></div></div>
+    <div class="es"><div class="es-dot"></div><div><div class="es-t">GEO Scan</div><div class="es-s">Weekly &middot; Mon 06:00</div></div></div>
+    <div class="es"><div class="es-dot"></div><div><div class="es-t">Search Console Sync</div><div class="es-s">Weekly &middot; Mon 06:30</div></div></div>
+    <div class="es"><div class="es-dot"></div><div><div class="es-t">Client Report</div><div class="es-s">Weekly &middot; Mon 07:30</div></div></div>
+  </div>
+  <div class="engine-quote">The swan does not show the work. Neither do we.</div>
+</div></div>
+
+<script>
+(function(){
+  var w=document.getElementById('splashWord');
+  'SIGNA'.split('').forEach(function(ch,i){
+    var s=document.createElement('span');s.textContent=ch;
+    s.style.animationDelay=(1.2+i*0.14)+'s';w.appendChild(s);});
+  var sp=document.getElementById('splash');
+  var end=function(){sp.classList.add('done');};
+  setTimeout(end,3400);
+  sp.addEventListener('click',end);
+})();
+
+var TENANTS=[
+{id:'ibreathe',name:'iBreathe',sector:'B2B Vape Distribution',location:'Oldham, United Kingdom',founded:2009,site:'ibreathe.co.uk',niche:'vape',regime:'CAP \u00b7 ASA \u00b7 TRPR',
+ style:{voice:'Value-led, plain-spoken. Confident without hype.',reading:'Grade 8 \u2014 accessible to trade and consumer',person:'Second person ("your shop", "your customers")',palette:['#1f6f54','#111111'],headings:'Sentence case, benefit-first',forbidden:'No lifestyle glamour. No youth-coded language.'},
+ guardrails:['safe','healthy','harmless','cure','quit smoking','stop smoking','risk-free','kids','teen','children'],tripped:['safe'],
+ railNote:'Vape content is advertised under CAP/ASA rules and TRPR. Health, safety and cessation claims are unlawful \u2014 every draft is scanned before it reaches a human.',
+ schemaTypes:'BlogPosting \u00b7 FAQPage \u00b7 Organization',
+ schema:'<span class="c">// Generated from facts \u2014 never invented by the model</span>\n{\n  <span class="k">"@context"</span>: <span class="s">"https://schema.org"</span>,\n  <span class="k">"@type"</span>: <span class="s">"BlogPosting"</span>,\n  <span class="k">"headline"</span>: <span class="s">"iBreathe 10ml E-Liquid \u2014 the value range"</span>,\n  <span class="k">"publisher"</span>: {\n    <span class="k">"@type"</span>: <span class="s">"Organization"</span>,\n    <span class="k">"name"</span>: <span class="s">"iBreathe"</span>,\n    <span class="k">"foundingDate"</span>: <span class="s">"2009"</span>\n  },\n  <span class="k">"datePublished"</span>: <span class="s">"2026-07-14"</span>\n}\n{\n  <span class="k">"@type"</span>: <span class="s">"FAQPage"</span>,\n  <span class="k">"mainEntity"</span>: [ <span class="c">/* 4 questions */</span> ]\n}'},
+{id:'firecreative',name:'Fire Creative \u2014 GP Practice',sector:'NHS / General Practice',location:'United Kingdom',founded:2015,site:'gp-practice.nhs.uk',niche:'healthcare',regime:'ASA \u00b7 CAP \u00b7 NHS Identity',
+ style:{voice:'Reassuring, patient-first. Never clinical-cold, never salesy.',reading:'Grade 6 \u2014 NHS accessibility standard',person:'Direct address to patients ("you can book\u2026")',palette:['#005eb8','#212b32'],headings:'Plain questions patients actually ask',forbidden:'No fear-based framing. No competitor comparison.'},
+ guardrails:['guaranteed','cure','miracle','100% effective','best doctor','painless','risk-free','no side effects','instant results'],tripped:[],
+ railNote:'Healthcare content cannot promise outcomes or imply guarantees. Signa also flags accessibility failures \u2014 NHS-adjacent sites are held to a higher standard than commercial ones.',
+ schemaTypes:'MedicalOrganization \u00b7 Physician \u00b7 LocalBusiness \u00b7 FAQPage',
+ schema:'<span class="c">// Healthcare pack \u2014 types no generic tool emits</span>\n{\n  <span class="k">"@context"</span>: <span class="s">"https://schema.org"</span>,\n  <span class="k">"@type"</span>: <span class="s">"MedicalOrganization"</span>,\n  <span class="k">"name"</span>: <span class="s">"The Practice"</span>,\n  <span class="k">"address"</span>: {\n    <span class="k">"@type"</span>: <span class="s">"PostalAddress"</span>,\n    <span class="k">"addressCountry"</span>: <span class="s">"GB"</span>\n  },\n  <span class="k">"telephone"</span>: <span class="s">"REPLACE_AT_PUBLISH"</span>\n}\n{\n  <span class="k">"@type"</span>: <span class="s">"Physician"</span>,\n  <span class="k">"medicalSpecialty"</span>: <span class="s">"PrimaryCare"</span>\n}'}];
+
+var DEMO={
+ ibreathe:{keywordMaster:[
+  {Keyword:'buy ibreathe e-liquid uk',page:'/collections/e-liquids',pos:'8.1',imp:'78',Status:'Drafted',geo:true},
+  {Keyword:'ibreathe 10ml e-liquid',page:'/collections/10ml-e-liquids',pos:'9.6',imp:'69',Status:'Needs Review'},
+  {Keyword:'vape shop manchester',page:'/pages/manchester',pos:'11.8',imp:'137',Status:'Needs Review (compliance)',geo:true},
+  {Keyword:'ibreathe vape flavours',page:'/collections/flavours',pos:'13.9',imp:'77',Status:'Queued'},
+  {Keyword:'cheap eliquid',page:'/collections/value-e-liquids',pos:'15.2',imp:'69',Status:'Approved'},
+  {Keyword:'will menthol filters be banned uk',page:'/blogs/news/menthol-ban-uk',pos:'10.7',imp:'117',Status:'Queued',geo:true}],
+  audit:{score:74,grade:'B',pages:30,issues:41},
+  geo:{score:58,answerFirst:41,citability:62,qa:70,
+   prose:'<p>Search is no longer only a results page. A growing share of your buyers now ask an AI assistant \u2014 and get an answer, not ten links. <em>Every draft Signa writes is worded for both surfaces</em>: ranked by Google, and quotable by the machines answering on your behalf.</p><p>Your answer-readiness sits at <b>58/100</b>. The gap is answer-first structure \u2014 your pages warm up before they answer, and <b>\u201cwill menthol filters be banned uk\u201d</b> is exactly the kind of question an assistant fields daily. The page that answers it in its first forty words gets quoted. I intend that to be yours.</p>'},
+  movement:[{Keyword:'buy ibreathe e-liquid uk',Delta:2.1,Direction:'UP'},{Keyword:'cheap eliquid',Delta:1.6,Direction:'UP'},{Keyword:'ibreathe 10ml e-liquid',Delta:0.8,Direction:'UP'}],
+  review:2},
+ firecreative:{keywordMaster:[
+  {Keyword:'gp surgery near me',page:'/find-us',pos:'12.4',imp:'210',Status:'Queued',geo:true},
+  {Keyword:'register with a gp',page:'/register',pos:'9.2',imp:'184',Status:'Needs Review',geo:true},
+  {Keyword:'book gp appointment online',page:'/appointments',pos:'14.7',imp:'156',Status:'Queued',geo:true},
+  {Keyword:'nhs health check',page:'/services/nhs-health-check',pos:'18.1',imp:'98',Status:'Queued'}],
+  audit:{score:61,grade:'C',pages:22,issues:58},
+  geo:{score:44,answerFirst:30,citability:48,qa:55,
+   prose:'<p>Patients increasingly ask an assistant \u2014 <em>\u201chow do I register with a GP?\u201d</em> \u2014 and read one answer, sourced from whichever practice page answered the question cleanest. Right now that answer is not being lifted from yours.</p><p>Answer-readiness sits at <b>44/100</b>, and the cause is the same one hurting your rankings: the pages describe processes instead of answering questions. One rewrite fixes both surfaces at once \u2014 <b>that is the whole point of writing for GEO and SEO together</b> rather than treating them as separate work.</p>'},
+  movement:[{Keyword:'register with a gp',Delta:1.1,Direction:'UP'}],
+  review:1}};
+
+function writeBriefing(t,d){
+  var km=d.keywordMaster,a=d.audit;
+  var striking=km.filter(function(r){var p=parseFloat(r.pos);return p>=8&&p<=20;});
+  var flagged=km.filter(function(r){return (r.Status||'').indexOf('compliance')>-1;}).length;
+  var ups=d.movement.filter(function(m){return m.Direction==='UP';}).sort(function(x,y){return y.Delta-x.Delta;});
+  var best=ups[0];
+  if(t.niche==='vape'){
+    return '<p>This week I would not chase new keywords. <em>'+striking.length+' of your terms already sit between positions 8 and 20</em> \u2014 Google trusts you for them, it simply isn\u2019t rewarding you yet. That is a page problem, not a content problem, and it is the cheapest ground you own.</p>'+
+    '<p>'+(best?('<b>\u201c'+best.Keyword+'\u201d</b> moved up '+best.Delta+' places after the last revision \u2014 evidence the approach is working. '):'')+'Meanwhile the crawl scored the site <b>'+a.score+'/100</b>. '+a.issues+' issues across '+a.pages+' pages; most are missing metadata rather than anything structural.</p>'+
+    '<p>'+(flagged?('One draft tripped the compliance gate \u2014 the word <em>\u201csafe\u201d</em> in an FAQ answer. Under CAP and TRPR that is not a stylistic preference, it is unlawful. I have held it for you rather than let it through.'):'Nothing has tripped the compliance gate this cycle.')+' Every draft this cycle is worded for both surfaces \u2014 <em>ranked by Google, quotable by the assistants</em> \u2014 because your buyers now use both.</p>';}
+  return '<p>The picture here is different from a commercial site. <em>Patients are searching in plain language</em> \u2014 \u201cregister with a gp\u201d, \u201cbook an appointment\u201d \u2014 and the practice ranks below page one for terms it should own outright, because the pages answer administratively rather than answering the question asked.</p>'+
+  '<p>The crawl scored <b>'+a.score+'/100</b>. More importantly, <b>'+a.issues+' issues</b> include accessibility failures across '+a.pages+' pages \u2014 for an NHS-adjacent site that is a duty-of-care problem before it is an SEO one, and I have prioritised it accordingly.</p>'+
+  '<p>No compliance flags this cycle. I am watching the language closely: healthcare content cannot promise outcomes, and the temptation in patient-facing copy is always to reassure a little too firmly.</p>';}
+
+function writeActions(t,d){var a=d.audit;
+  if(t.niche==='vape')return[
+   ['Rewrite the four striking-distance collection pages','Title, meta and intro only. No new articles \u2014 the pages exist and rank.'],
+   ['Release the held draft','Remove \u201csafe\u201d from the FAQ answer. It is one word between you and a compliant page.'],
+   ['Fix the missing metadata','Most of the '+a.issues+' issues are title/meta gaps. Mechanical, and worth more than new content.'],
+   ['Publish the menthol-ban piece','Position 10.7 on a question with real intent behind it. Rare opportunity.'],
+   ['Restructure the menthol piece answer-first','Open with the answer in 40 words, FAQ schema beneath. Written once, it works on both Google and the assistants.']];
+  return[
+   ['Rewrite the registration page as an answer','Patients ask \u201chow do I register\u201d \u2014 the page currently describes a process.'],
+   ['Resolve accessibility failures first','Higher duty of care than a commercial site. Do this before content work.'],
+   ['Add MedicalOrganization schema','No practice in this area has it. Cheap differentiation in local results.'],
+   ['Claim \u201cbook gp appointment online\u201d','Position 14.7 with 156 impressions. Winnable within a quarter.'],
+   ['Word the top three patient questions for GEO','Answer-first, question-phrased headings, FAQ markup \u2014 so the assistants quote your practice, not a directory.']];}
+
+function verdict(r){var p=parseFloat(r.pos);
+  if((r.Status||'').indexOf('compliance')>-1)return'Held at the gate \u2014 one term must go.';
+  if(p<=10)return'Close. Sharpen the page, do not rewrite it.';
+  if(p<=20)return'Striking distance. Worth the effort.';
+  return'Cold. Later \u2014 not now.';}
+
+
+function esc(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function titleCase(k){var t=k.replace(/\b\w/g,function(c){return c.toUpperCase();});t=t.replace(/\bUk\b/g,'UK').replace(/\bNhs\b/g,'NHS').replace(/\bGp\b/g,'GP').replace(/\bFaq\b/g,'FAQ');TENANTS.forEach(function(tn){var re=new RegExp('\\b'+tn.name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b','gi');t=t.replace(re,tn.name);});return t;}
+function buildPrompt(t,r,g){
+  var kw=r.Keyword, page=r.page||'/', site='https://'+t.site, url=site+page;
+  var brand=t.name, title=titleCase(kw)+' | '+brand;
+  if(title.length>60){title=titleCase(kw).slice(0,60-3-brand.length)+' | '+brand;}
+  var meta=titleCase(kw)+' from '+brand+' \u2014 trading since '+t.founded+'. Clear pricing, fast dispatch, UK support.';
+  meta=meta.slice(0,155);
+  var never=t.guardrails.slice(0,6).join('", "');
+  return [
+'ROLE',
+'You are implementing SEO + GEO fixes on ONE page. Apply exactly what is specified. Do not redesign the page, change its routing, or touch any other page.',
+'',
+'PAGE',
+'URL: '+url,
+'Site: '+site+'  \u00b7  Sector: '+t.sector,
+'Target keyword (primary): "'+kw+'"  \u00b7  current Google position: '+r.pos,
+'Surfaces: Google results page AND AI answer engines \u2014 every change below serves both.',
+'',
+'CHANGES \u2014 IN THIS ORDER',
+'',
+'1. CANONICAL (do first \u2014 nothing ranks while this is wrong)',
+'   Ensure a single self-referencing canonical. Remove any canonical pointing elsewhere.',
+'   <link rel="canonical" href="'+url+'" />',
+'',
+'2. TITLE & META (counted \u2014 keep within limits)',
+'   <title>'+title+'</title>   ('+title.length+' chars, limit 60)',
+'   <meta name="description" content="'+meta+'" />   ('+meta.length+' chars, limit 155)',
+'   Rules: primary keyword appears in <title>, <h1> and the meta description.',
+'   No two tags on this page may be identical; no tag may duplicate a tag on any other page of the site.',
+'',
+'3. HEADING SKELETON',
+'   Exactly one <h1>: <h1>'+titleCase(kw)+'</h1>',
+'   First <h2> phrased as the question users ask (GEO): e.g. <h2>'+('What should I know about '+kw+'?')+'</h2>',
+'   Keep remaining h2/h3 hierarchy logical; never skip levels.',
+'',
+'4. ANSWER-FIRST OPENING (GEO \u2014 the paragraph engines quote)',
+'   The FIRST paragraph after the h1 must directly answer the query in 40\u201360 words:',
+'   what it is, who it is for, and the single strongest reason to choose '+brand+'.',
+'   No warm-up sentences. No "welcome to". Answer, then elaborate.',
+'',
+'5. FAQ BLOCK + SCHEMA (paste-ready)',
+'   Add 3\u20135 real questions with direct answers, then this JSON-LD in the page:',
+'   <script type="application/ld+json">',
+'   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[',
+'     {"@type":"Question","name":"REPLACE: question 1",',
+'      "acceptedAnswer":{"@type":"Answer","text":"REPLACE: direct answer, 1\u20133 sentences."}}',
+'   ]}',
+'   <\/script>',
+'   Also ensure page-level schema carries datePublished/dateModified and publisher \u2014 answer engines prefer dated, attributed sources.',
+'',
+'6. IMAGE ALT TEXTS',
+'   Every <img> gets a descriptive alt. End each alt with a full stop. (Screen readers pause instead of running into the next element.)',
+'   Include the primary keyword only where honest.',
+'',
+'ACCEPTANCE CRITERIA \u2014 verify before finishing',
+'[ ] Canonical is self-referencing and unique',
+'[ ] Primary keyword in title, h1 and meta description; lengths within 60/155',
+'[ ] Exactly one h1; first h2 is question-phrased',
+'[ ] Opening paragraph answers the query in \u226460 words',
+'[ ] FAQPage JSON-LD validates (schema.org validator)',
+'[ ] All image alts end with a full stop',
+'[ ] No tag on this page duplicates a tag anywhere else on the site',
+'',
+'COMPLIANCE \u2014 NON-NEGOTIABLE ('+t.regime+')',
+'Never use or imply: "'+never+'".',
+'If existing copy contains any of these, remove or rephrase \u2014 flag anything you are unsure about rather than publishing it.'
+  ].join('\n');
+}
+var PM_CURRENT='';
+function openPrompt(ti,ki){
+  var t=TENANTS[ti],d=DEMO[t.id],r=d.keywordMaster[ki];
+  PM_CURRENT=buildPrompt(t,r,d.geo);
+  document.getElementById('pmTitle').textContent=r.Keyword+' \u2014 '+(r.page||'/');
+  document.getElementById('pmBody').textContent=PM_CURRENT;
+  document.getElementById('pmodal').classList.add('open');
+}
+
+function $(id){return document.getElementById(id);}
+function render(t){
+  var d=DEMO[t.id];
+  var _gen=(DEMO[t.id]&&DEMO[t.id]._generated)?new Date(DEMO[t.id]._generated):new Date();$('briefDate').textContent=_gen.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})+((DEMO[t.id]&&DEMO[t.id]._live)?'':' \u00b7 demo');
+  $('dossier').innerHTML=
+   '<div class="dos"><div class="dos-l">Sector</div><div class="dos-v">'+t.sector+'<small>'+t.location+'</small></div></div>'+
+   '<div class="dos"><div class="dos-l">Regulatory Regime</div><div class="dos-v"><span class="pill">'+t.regime+'</span><small>Compliance pack: '+t.niche+'</small></div></div>'+
+   '<div class="dos"><div class="dos-l">Trading Since</div><div class="dos-v">'+t.founded+'<small>'+(new Date().getFullYear()-t.founded)+' years \u2014 used verbatim, never estimated</small></div></div>'+
+   '<div class="dos"><div class="dos-l">Structured Data</div><div class="dos-v" style="font-size:15px;line-height:1.5">'+t.schemaTypes+'</div></div>';
+  $('brief').innerHTML=writeBriefing(t,d);
+  var nums=['I.','II.','III.','IV.','V.'];
+  $('actions').innerHTML=writeActions(t,d).map(function(a,i){
+   return '<div class="act"><div class="act-n">'+nums[i]+'</div><div><div class="act-t">'+a[0]+'</div><div class="act-s">'+a[1]+'</div></div></div>';}).join('');
+  var km=d.keywordMaster,a=d.audit,g=d.geo;
+  var striking=km.filter(function(r){var p=parseFloat(r.pos);return p>=8&&p<=20;}).length;
+  var ups=d.movement.filter(function(m){return m.Direction==='UP';}).length;
+  $('evidence').innerHTML=
+   '<div class="ev"><div class="ev-l">Striking Distance</div><div class="ev-v">'+striking+'</div><div class="ev-s">terms at positions 8\u201320 \u2014 <span class="up">the cheapest ground you own</span></div></div>'+
+   '<div class="ev"><div class="ev-l">Site Health</div><div class="ev-v">'+a.score+'<span class="u">/100</span></div><div class="ev-s">Grade '+a.grade+' \u00b7 '+a.pages+' pages crawled \u00b7 '+a.issues+' issues</div></div>'+
+   '<div class="ev"><div class="ev-l">Answer Readiness</div><div class="ev-v">'+g.score+'<span class="u">/100</span></div><div class="ev-s">GEO \u2014 how quotable your pages are <span class="up">to AI assistants</span></div></div>'+
+   '<div class="ev"><div class="ev-l">Movement</div><div class="ev-v">'+ups+'<span class="u">\u25b2</span></div><div class="ev-s">terms improved since last revision</div></div>'+
+   '<div class="ev"><div class="ev-l">Awaiting You</div><div class="ev-v">'+d.review+'</div><div class="ev-s">drafts held for sign-off \u2014 <span class="down">nothing publishes alone</span></div></div>';
+  $('answerProse').innerHTML=g.prose;
+  function gcRow(l,v){return '<div class="gc"><span class="gc-l">'+l+'</span><div class="gc-bar"><i style="width:'+v+'%"></i></div><span class="gc-v">'+v+'<span class="u">/100</span></span></div>';}
+  $('geoCards').innerHTML=
+   gcRow('Answer-First Structure',g.answerFirst)+
+   gcRow('Citability',g.citability)+
+   gcRow('Q&amp;A / Schema Shape',g.qa)+
+   gcRow('Overall GEO Readiness',g.score);
+  $('schemaTag').textContent=t.schemaTypes.split(' \u00b7 ')[0];
+  $('schemaCode').innerHTML=t.schema;
+  var s=t.style;
+  $('styleBody').innerHTML=
+   '<div class="style-row"><div class="style-k">Voice</div><div class="style-v">'+s.voice+'</div></div>'+
+   '<div class="style-row"><div class="style-k">Reading level</div><div class="style-v">'+s.reading+'</div></div>'+
+   '<div class="style-row"><div class="style-k">Address</div><div class="style-v">'+s.person+'</div></div>'+
+   '<div class="style-row"><div class="style-k">Headings</div><div class="style-v">'+s.headings+'</div></div>'+
+   '<div class="style-row"><div class="style-k">Palette</div><div class="style-v">'+s.palette.map(function(c){return '<span class="swatch" style="background:'+c+'"></span>'+c;}).join('&nbsp;&nbsp;')+'</div></div>'+
+   '<div class="style-row"><div class="style-k">Never</div><div class="style-v">'+s.forbidden+'</div></div>';
+  $('railTag').textContent=t.regime;
+  $('rails').innerHTML=t.guardrails.map(function(g){
+   var hit=t.tripped.indexOf(g)>-1;
+   return '<span class="rail'+(hit?' hit':'')+'">'+g+(hit?' \u2014 caught':'')+'</span>';}).join('');
+  $('railNote').textContent=t.railNote;
+  $('ledger').innerHTML=km.map(function(r){
+   var m=null;for(var i=0;i<d.movement.length;i++){if(d.movement[i].Keyword===r.Keyword){m=d.movement[i];break;}}
+   var dl=m?(m.Direction==='UP'?'<span class="d-up">\u25b2 '+m.Delta+'</span>':'<span class="d-dn">\u25bc '+Math.abs(m.Delta)+'</span>'):'';
+   var st=(r.Status||'');var cls=st.indexOf('compliance')>-1?'review':st==='Approved'?'live':'';
+   return '<tr><td class="kw">'+r.Keyword+(r.geo?'<span class="geo-chip">GEO</span>':'')+'</td><td><span class="posn">'+r.pos+'</span>'+dl+'</td><td class="verdict">'+verdict(r)+'</td><td class="st '+cls+'">'+(st||'Queued')+'</td><td style="text-align:right"><button class="prompt-btn" onclick="openPrompt('+TENANTS.indexOf(t)+','+km.indexOf(r)+')">Create Prompt</button></td></tr>';}).join('');
+}
+
+document.getElementById('pmClose').addEventListener('click',function(){document.getElementById('pmodal').classList.remove('open');});
+document.getElementById('pmodal').addEventListener('click',function(e){if(e.target===this)this.classList.remove('open');});
+document.getElementById('pmCopy').addEventListener('click',function(){
+  var b=this;
+  function ok(){b.textContent='Copied ✓';setTimeout(function(){b.textContent='Copy Prompt';},1600);}
+  function fb(){var ta=document.createElement('textarea');ta.value=PM_CURRENT;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);ok();}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(PM_CURRENT).then(ok).catch(fb);}
+  else{fb();}
+});
+var sel=$('tenantSel');
+TENANTS.forEach(function(t){var o=document.createElement('option');o.value=t.id;o.textContent=t.name;sel.appendChild(o);});
+sel.addEventListener('change',function(){for(var i=0;i<TENANTS.length;i++){if(TENANTS[i].id===sel.value){render(TENANTS[i]);break;}}});
+
+// ===== LIVE DATA =====
+// The n8n workflow commits data/<tenant>.json to the signa-dashboard repo,
+// served by Cloudflare Pages. On load we try to fetch the live snapshot and
+// merge it over the embedded demo data. If the fetch fails (opened as a local
+// file, or offline), the dashboard still renders from DEMO — no blank screen.
+var DATA_BASE='./data/';  // same-origin on Cloudflare Pages; override if hosted elsewhere
+function applyLive(tenantId,live){
+  if(!live) return;
+  var d=DEMO[tenantId]; if(!d) return;
+  if(live.keywordMaster) d.keywordMaster=live.keywordMaster;
+  if(live.audit) d.audit=live.audit;
+  if(live.geo) d.geo=live.geo;
+  if(live.movement) d.movement=live.movement;
+  if(typeof live.review==='number') d.review=live.review;
+  d._live=true; d._generated=live.generated||'';
+}
+function fetchTenant(t){
+  return fetch(DATA_BASE+t.id+'.json',{cache:'no-store'})
+    .then(function(r){return r.ok?r.json():null;})
+    .then(function(j){applyLive(t.id,j);return j;})
+    .catch(function(){return null;});
+}
+// Fetch all tenants in parallel, then render the first. A small "live/demo"
+// note is stamped into the masthead mode chip.
+Promise.all(TENANTS.map(fetchTenant)).then(function(results){
+  var anyLive=results.some(function(r){return r;});
+  var chip=document.querySelector('.mast-bar .mode');
+  if(chip) chip.textContent=anyLive?'Live Data':'Demo Data';
+  render(TENANTS[0]);
+});
+// Render immediately from demo data too, so there's no wait-for-network flash
+render(TENANTS[0]);
+</script>
+</body>
+</html>
