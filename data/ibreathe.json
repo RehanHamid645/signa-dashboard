@@ -1,1 +1,223 @@
-{"tenant":"ibreathe","generated":"","keywordMaster":[],"audit":{"score":0,"grade":"-","pages":0,"issues":0},"geo":{"score":0,"answerFirst":0,"citability":0,"qa":0,"provisional":true,"prose":""},"movement":[],"review":0,"striking":0}
+{
+  "tenant": "ibreathe",
+  "generated": "2026-07-17T04:33:49.110-04:00",
+  "keywordMaster": [
+    {
+      "Keyword": "buy ibreathe e-liquid uk",
+      "page": "/collections/e-liquid",
+      "pos": "10.2",
+      "imp": "78",
+      "Status": "Needs Review",
+      "geo": false
+    },
+    {
+      "Keyword": "ibreathe 10ml e-liquid",
+      "page": "/collections/e-liquid",
+      "pos": "10.4",
+      "imp": "69",
+      "Status": "Drafted",
+      "geo": false
+    },
+    {
+      "Keyword": "ibreathe e-liquid uk",
+      "page": "/collections/e-liquid",
+      "pos": "11.3",
+      "imp": "63",
+      "Status": "drafted",
+      "geo": false
+    },
+    {
+      "Keyword": "ibreathe e-liquid",
+      "page": "/collections/e-liquid",
+      "pos": "12.3",
+      "imp": "65",
+      "Status": "Queued",
+      "geo": false
+    },
+    {
+      "Keyword": "ibreathe vape flavours",
+      "page": "/collections/e-liquid",
+      "pos": "13.9",
+      "imp": "77",
+      "Status": "Queued",
+      "geo": false
+    },
+    {
+      "Keyword": "ibreathe menthol",
+      "page": "/collections/menthol",
+      "pos": "2.9",
+      "imp": "152",
+      "Status": "Queued",
+      "geo": false
+    },
+    {
+      "Keyword": "vape shops near me",
+      "page": "/pages/stores",
+      "pos": "8.5",
+      "imp": "124",
+      "Status": "Queued",
+      "geo": false
+    },
+    {
+      "Keyword": "vape shop manchester",
+      "page": "/pages/stores",
+      "pos": "11.8",
+      "imp": "137",
+      "Status": "Queued",
+      "geo": false
+    },
+    {
+      "Keyword": "vape shops manchester",
+      "page": "/blog/vape-shops-manchester",
+      "pos": "12.9",
+      "imp": "108",
+      "Status": "Queued",
+      "geo": true
+    },
+    {
+      "Keyword": "cheap eliquid",
+      "page": "/collections/cheap-e-liquid",
+      "pos": "16.8",
+      "imp": "69",
+      "Status": "Queued",
+      "geo": false
+    },
+    {
+      "Keyword": "cheap e liquid",
+      "page": "/collections/cheap-e-liquid",
+      "pos": "33.9",
+      "imp": "57",
+      "Status": "Queued",
+      "geo": false
+    },
+    {
+      "Keyword": "cheap e-liquid",
+      "page": "/collections/cheap-e-liquid",
+      "pos": "34.8",
+      "imp": "13",
+      "Status": "Queued",
+      "geo": false
+    },
+    {
+      "Keyword": "e liquid uk",
+      "page": "/collections/e-liquid",
+      "pos": "35.1",
+      "imp": "215",
+      "Status": "Queued",
+      "geo": false
+    },
+    {
+      "Keyword": "cheap vape juice uk",
+      "page": "/blog/cheap-vape-juice-uk",
+      "pos": "unranked",
+      "imp": "0",
+      "Status": "Queued",
+      "geo": true
+    },
+    {
+      "Keyword": "affordable e-liquid uk",
+      "page": "/blog/affordable-e-liquid",
+      "pos": "unranked",
+      "imp": "0",
+      "Status": "Queued",
+      "geo": true
+    },
+    {
+      "Keyword": "vape juice deals uk",
+      "page": "/blog/vape-deals",
+      "pos": "unranked",
+      "imp": "0",
+      "Status": "Queued",
+      "geo": true
+    },
+    {
+      "Keyword": "e cigarette starter kit",
+      "page": "/collections/vape-kits",
+      "pos": "26.5",
+      "imp": "299",
+      "Status": "Queued",
+      "geo": false
+    },
+    {
+      "Keyword": "electronic cigarette starter kit",
+      "page": "/collections/vape-kits",
+      "pos": "29.2",
+      "imp": "342",
+      "Status": "Queued",
+      "geo": false
+    },
+    {
+      "Keyword": "will menthol filters be banned uk",
+      "page": "/blog/menthol-ban-alternatives",
+      "pos": "10.7",
+      "imp": "56",
+      "Status": "Queued",
+      "geo": true
+    },
+    {
+      "Keyword": "disposable vape alternatives",
+      "page": "/blog/disposable-vape-alternatives",
+      "pos": "unranked",
+      "imp": "0",
+      "Status": "Queued",
+      "geo": true
+    },
+    {
+      "Keyword": "refillable vape pods uk",
+      "page": "/blog/refillable-pods",
+      "pos": "unranked",
+      "imp": "0",
+      "Status": "Queued",
+      "geo": true
+    },
+    {
+      "Keyword": "nic salts uk",
+      "page": "/collections/nic-salts",
+      "pos": "unranked",
+      "imp": "0",
+      "Status": "Queued",
+      "geo": false
+    },
+    {
+      "Keyword": "best nic salts uk",
+      "page": "/blog/best-nic-salts-uk",
+      "pos": "unranked",
+      "imp": "0",
+      "Status": "Queued",
+      "geo": true
+    },
+    {
+      "Keyword": "cheap nic salts",
+      "page": "/collections/nic-salts",
+      "pos": "unranked",
+      "imp": "0",
+      "Status": "Queued",
+      "geo": false
+    },
+    {
+      "Keyword": "vape starter kit uk",
+      "page": "/blog/beginner-vape-kit",
+      "pos": "73.5",
+      "imp": "21",
+      "Status": "Queued",
+      "geo": true
+    }
+  ],
+  "audit": {
+    "score": 74,
+    "grade": "B",
+    "pages": 30,
+    "issues": 41
+  },
+  "geo": {
+    "score": 51,
+    "answerFirst": 37,
+    "citability": 55,
+    "qa": 56,
+    "provisional": true,
+    "prose": "<p>Search is no longer only a results page — a growing share of buyers ask an AI assistant and read one answer. <em>Every draft is worded for both surfaces</em>: ranked by Google, quotable by the machines.</p><p>Of 25 tracked terms, <b>9</b> are question- or answer-shaped — the ones most likely to be lifted into an AI answer. This readiness score is provisional until the next crawl scores each page directly.</p>"
+  },
+  "movement": [],
+  "review": 3,
+  "striking": 10
+}
