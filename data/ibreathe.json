@@ -1,6 +1,6 @@
 {
   "tenant": "ibreathe",
-  "generated": "2026-07-17T07:28:36.845-04:00",
+  "generated": "2026-07-20T07:05:25.523-04:00",
   "keywordMaster": [
     {
       "Keyword": "buy ibreathe e-liquid uk",
@@ -15,7 +15,7 @@
       "page": "/collections/e-liquid",
       "pos": "10.4",
       "imp": "69",
-      "Status": "Queued",
+      "Status": "drafted",
       "geo": false
     },
     {
@@ -23,7 +23,7 @@
       "page": "/collections/e-liquid",
       "pos": "11.3",
       "imp": "63",
-      "Status": "Queued",
+      "Status": "Drafted",
       "geo": false
     },
     {
@@ -218,6 +218,6 @@
     "prose": "<p>Search is no longer only a results page — a growing share of buyers ask an AI assistant and read one answer. <em>Every draft is worded for both surfaces</em>: ranked by Google, quotable by the machines.</p><p>Of 25 tracked terms, <b>9</b> are question- or answer-shaped — the ones most likely to be lifted into an AI answer. This readiness score is provisional until the next crawl scores each page directly.</p>"
   },
   "movement": [],
-  "review": 1,
+  "review": 3,
   "striking": 10
 }
